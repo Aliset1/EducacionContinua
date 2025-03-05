@@ -17,7 +17,7 @@ export const paths = {
   dashboard: {
     overview: '/dashboard',
     account: '/dashboard/account',
-    courses: '/dashboard/courses',
+    courses: '/dashboard/publicidad',
     enrollments: '/dashboard/enrollments',
     forms: '/dashboard/forms',
     notifications: '/dashboard/notifications',

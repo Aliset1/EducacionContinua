@@ -1,15 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { addDoc, collection, deleteDoc, doc, onSnapshot, updateDoc } from 'firebase/firestore';
+import { onSnapshot, collection } from 'firebase/firestore';
 import Slider from 'react-slick';
-
 import { db } from '../../../firebase';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 import { Card, CardContent, Grid, Typography } from '@mui/material';
+import QRCode from 'react-qr-code';
 
 const CursoCarousel = () => {
   const [cursos, setCursos] = useState([]);
@@ -36,67 +34,33 @@ const CursoCarousel = () => {
     <Slider {...settings}>
       {cursos.map((curso) => (
         <Card key={curso.id} sx={{ p: 3, m: 2, textAlign: 'center' }}>
-          <CardContent className="">
-            <Typography variant="h5" color="primary">
-              {curso.nombre}
-            </Typography>
-            <img src="/assets/logoeducacion2.png" alt="edu-continua" width={'200px'} />
-            <Typography variant="body2">{curso.descripcion}</Typography>
-            <Typography variant="subtitle2">Inicio: {new Date(curso.fechaInicio).toLocaleDateString()}</Typography>
-            <Typography variant="subtitle2">Fin: {new Date(curso.fechaFin).toLocaleDateString()}</Typography>
+          <CardContent>
+            <Grid container spacing={2}>
+              {/* Columna para el contenido */}
+              <Grid item xs={6}>
+                <Typography variant="h5" color="primary">
+                  {curso.nombre}
+                </Typography>
+                <Typography variant="body2">{curso.descripcion}</Typography>
+                <Typography variant="subtitle2">Inicio: {new Date(curso.fechaInicio).toLocaleDateString()}</Typography>
+                <Typography variant="subtitle2">Fin: {new Date(curso.fechaFin).toLocaleDateString()}</Typography>
+              </Grid>
+
+              {/* Columna para el QR y logo */}
+              <Grid item xs={6} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                {/* Logo encima del QR */}
+                <img src="/assets/logoeducacion2.png" alt="edu-continua" width={'150px'} style={{ marginBottom: '10px' }} />
+                
+                {curso.googleFormLink && curso.googleFormLink.trim() !== "" ? (
+                  <QRCode value={curso.googleFormLink} size={128} /> // Mostrar el QR solo si el link está definido
+                ) : (
+                  <Typography variant="body2" color="error">No hay enlace disponible</Typography>
+                )}
+              </Grid>
+            </Grid>
           </CardContent>
         </Card>
       ))}
-
-      <Grid container spacing={3} sx={{ p: 4 }}>
-        {/* Fila 1 */}
-        <Grid item xs={12} sm={6} md={4}>
-          <div style={{ backgroundColor: '#FFCCCC', padding: '20px', borderRadius: '8px' }}>
-            <Typography variant="h6" align="center">
-              Grid 1
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <div style={{ backgroundColor: '#CCFFCC', padding: '20px', borderRadius: '8px' }}>
-            <Typography variant="h6" align="center">
-              Grid 2
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <div style={{ backgroundColor: '#CCCCFF', padding: '20px', borderRadius: '8px' }}>
-            <Typography variant="h6" align="center">
-              Grid 3
-            </Typography>
-          </div>
-        </Grid>
-
-        {/* Fila 2 */}
-        <Grid item xs={12} sm={6} md={8}>
-          <div style={{ backgroundColor: '#FFDDCC', padding: '20px', borderRadius: '8px' }}>
-            <Typography variant="h6" align="center">
-              Grid 4 (Ancho Doble)
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item xs={12} sm={6} md={4}>
-          <div style={{ backgroundColor: '#DDFFCC', padding: '20px', borderRadius: '8px' }}>
-            <Typography variant="h6" align="center">
-              Grid 5
-            </Typography>
-          </div>
-        </Grid>
-
-        {/* Fila 3 */}
-        <Grid item xs={12}>
-          <div style={{ backgroundColor: '#FFCCDD', padding: '20px', borderRadius: '8px' }}>
-            <Typography variant="h6" align="center">
-              Grid 6 (Ancho Completo)
-            </Typography>
-          </div>
-        </Grid>
-      </Grid>
     </Slider>
   );
 };
