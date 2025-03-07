@@ -21,6 +21,6 @@ export const navItems = [
   { key: 'forms', title: 'Gestión de Formularios', href: paths.dashboard.forms, icon: 'forms' },
   { key: 'notifications', title: 'Gestión de Notificaciones', href: paths.dashboard.notifications, icon: 'notifications' },
   { key: 'payments', title: 'Seguimiento de Pago', href: paths.dashboard.payments, icon: 'payments' },
-  { key: 'settings', title: 'Settings', href: paths.dashboard.settings, icon: 'gear-six' },
+  { key: 'settings', title: 'Configuraciones', href: paths.dashboard.settings, icon: 'gear-six' },
   { key: 'error', title: 'Error', href: paths.errors.notFound, icon: 'x-square' },
 ] satisfies NavItemConfig[];
