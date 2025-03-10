@@ -24,6 +24,7 @@ export const navIcons = {
   'notifications': BellIcon, // Representa notificaciones
   'payments': CreditCardIcon, // Representa pagos o transacciones
   'publicidad': MegaphoneIcon,
+  'maestrias' : BookIcon,
   user: UserIcon,
   users: UsersIcon,
 } as Record<string, Icon>;

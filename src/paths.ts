@@ -24,6 +24,7 @@ export const paths = {
     payments: '/dashboard/payments',
     cursos: '/dashboard/cursos',
     settings: '/dashboard/settings',
+    maestrias: '/dashboard/maestrias'
   },
   errors: { notFound: '/errors/not-found' },
 } as const;
