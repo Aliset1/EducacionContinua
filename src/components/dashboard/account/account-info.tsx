@@ -1,20 +1,17 @@
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 
 const user = {
-  name: 'Sofia Rivers',
+  name: 'Carlos Sánchez',
   avatar: '/assets/avatar.png',
   jobTitle: 'Senior Developer',
-  country: 'USA',
-  city: 'Los Angeles',
-  timezone: 'GTM-7',
+  country: 'Ecuador',
+  city: 'Latacunga',
 } as const;
 
 export function AccountInfo(): React.JSX.Element {
@@ -30,18 +27,10 @@ export function AccountInfo(): React.JSX.Element {
             <Typography color="text.secondary" variant="body2">
               {user.city} {user.country}
             </Typography>
-            <Typography color="text.secondary" variant="body2">
-              {user.timezone}
-            </Typography>
           </Stack>
         </Stack>
       </CardContent>
       <Divider />
-      <CardActions>
-        <Button fullWidth variant="text">
-          Upload picture
-        </Button>
-      </CardActions>
     </Card>
   );
 }
