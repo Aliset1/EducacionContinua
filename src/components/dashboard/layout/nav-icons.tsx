@@ -11,6 +11,7 @@ import { FileText as DocumentTextIcon } from '@phosphor-icons/react/dist/ssr/Fil
 import { Bell as BellIcon } from '@phosphor-icons/react/dist/ssr/Bell';
 import { CreditCard as CreditCardIcon } from '@phosphor-icons/react/dist/ssr/CreditCard';
 import { ChartBar as PresentationChartIcon } from '@phosphor-icons/react';
+import { Megaphone as MegaphoneIcon } from '@phosphor-icons/react/dist/ssr/Megaphone';
 
 export const navIcons = {
   'chart-pie': ChartPieIcon,
@@ -23,6 +24,8 @@ export const navIcons = {
   'notifications': BellIcon, // Representa notificaciones
   'payments': CreditCardIcon, // Representa pagos o transacciones
   'presentation-chart': PresentationChartIcon,
+  'publicidad': MegaphoneIcon,
+  'maestrias' : BookIcon,
   user: UserIcon,
   users: UsersIcon,
   book: BookIcon,

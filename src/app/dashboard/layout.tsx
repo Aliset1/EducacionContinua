@@ -14,7 +14,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps): React.JSX.Element {
   return (
     <AuthGuard>
-      <GlobalStyles
+      <GlobalStyles 
         styles={{
           body: {
             '--MainNav-height': '56px',
@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps): React.JSX.Element {
       />
       <Box
         sx={{
-          bgcolor: 'var(--mui-palette-background-default)',
+          bgcolor: '#EAF2F8',
           display: 'flex',
           flexDirection: 'column',
           position: 'relative',
