@@ -10,6 +10,7 @@ import { Clipboard as ClipboardListIcon } from '@phosphor-icons/react/dist/ssr/C
 import { FileText as DocumentTextIcon } from '@phosphor-icons/react/dist/ssr/FileText';
 import { Bell as BellIcon } from '@phosphor-icons/react/dist/ssr/Bell';
 import { CreditCard as CreditCardIcon } from '@phosphor-icons/react/dist/ssr/CreditCard';
+import { ChartBar as PresentationChartIcon } from '@phosphor-icons/react';
 
 export const navIcons = {
   'chart-pie': ChartPieIcon,
@@ -21,6 +22,8 @@ export const navIcons = {
   'forms': DocumentTextIcon, // Representa formularios
   'notifications': BellIcon, // Representa notificaciones
   'payments': CreditCardIcon, // Representa pagos o transacciones
+  'presentation-chart': PresentationChartIcon,
   user: UserIcon,
   users: UsersIcon,
+  book: BookIcon,
 } as Record<string, Icon>;

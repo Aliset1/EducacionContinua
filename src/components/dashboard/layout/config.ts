@@ -22,5 +22,6 @@ export const navItems = [
   { key: 'notifications', title: 'Gestión de Notificaciones', href: paths.dashboard.notifications, icon: 'notifications' },
   { key: 'payments', title: 'Seguimiento de Pago', href: paths.dashboard.payments, icon: 'payments' },
   { key: 'settings', title: 'Settings', href: paths.dashboard.settings, icon: 'gear-six' },
+  { key: 'carrusel', title: 'Cursos Presentación', href: paths.dashboard.carrusel, icon: 'presentation-chart' },
   { key: 'error', title: 'Error', href: paths.errors.notFound, icon: 'x-square' },
 ] satisfies NavItemConfig[];
